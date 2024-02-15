@@ -1,1 +1,1 @@
-docker exec -it somethingmeaningful /bin/bash
+docker exec -it td6mlopsback /bin/bash
