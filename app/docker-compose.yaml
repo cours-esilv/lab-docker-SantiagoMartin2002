@@ -6,3 +6,15 @@ services:
       - "5000:5000"
     environment:
       - CURRENT_ENVIRONMENT=development
+    volumes:
+      - backdata:/app/data
+  
+  frontend:
+    image: myfrontapp
+    ports:
+      - "8081:80"
+    environment:
+      - WS_BACK_URL=http://localhost:5000
+
+volumes:
+  backdata:
