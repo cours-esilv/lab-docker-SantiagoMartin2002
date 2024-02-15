@@ -1,8 +1,12 @@
-FROM nginx:alpine
+FROM nginx:latest
 
-COPY . /usr/share/nginx/html
+WORKDIR /
 
-RUN chmod +x /usr/share/nginx/html/entrypoint.sh
+COPY index.html /usr/share/nginx/html
 
-ENTRYPOINT ["/usr/share/nginx/html/entrypoint.sh"]
+COPY entrypoint.sh /
+
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT "./entrypoint.sh"
 
