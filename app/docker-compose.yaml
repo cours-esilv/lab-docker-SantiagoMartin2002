@@ -1,0 +1,8 @@
+version: '3'
+services:
+  backend:
+    image: santiagomartin2002/td6mlopsback:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - CURRENT_ENVIRONMENT=development
